@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="ext-center text-muted mb-3">{% block title %} Students {% endblock %}</h1>
+<table class='table table-bordered'>
+    <thead>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>LAST NAME</th>
+        <th>DATE</th>
+        <th>IMAGE</th>
+    </thead>
+    <tbody>
+        {% for data in studentData %}
+        <tr>
+            <td>{{data.id}}</td>
+            <td>{{ data.fname }}</td>
+            <td>{{ data.lname }}</td>
+            <td>{{ data.date_created }}</td>
+            <td>{{ data.image }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
